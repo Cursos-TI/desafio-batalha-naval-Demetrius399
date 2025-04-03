@@ -25,7 +25,7 @@ int main() {
   }
 
   //Posicionar o navio horizontalmente
-  int linhaD = 2, colunaD = 4;
+  int linhaD = 1, colunaD = 5;
   for ( i = 0; i < NAVIOS; i++) { 
     tabuleiro[linhaD][colunaD + i] ='3';
 
@@ -36,6 +36,17 @@ int main() {
     for (i = 0; i< NAVIOS; i++) {
       tabuleiro[linhaB + i][colunaB] ='3';
     }
+    //Posicionar o navio na diagonal principal (\)
+    int linhaA = 1,colunaA = 1;//Linha onde o navio será posicionado.
+    for (i = 0; i< NAVIOS; i++) {
+      tabuleiro[linhaA + i][colunaA + i] = '3';
+    }
+    //Posicionar o navio na diagonal secundaria(/)
+    int linhaC = 6, colunaC = 8;
+    for ( i = 0; i < NAVIOS; i++) {
+      tabuleiro[linhaC + i][colunaC - i] = '3';
+    }
+    
      printf("   "); 
     
     for (j =0; j < TAM; j++) {
